@@ -7,6 +7,11 @@
   height: 40vmin;
 }
 
+.btn{
+  background-color: #61dafb;
+  height: 300px;
+  width: 200px;
+}
 .App-header {
   background-color:white;
   min-height: 100vh;
