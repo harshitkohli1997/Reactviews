@@ -27,6 +27,18 @@ class App extends Component {
       ]
     })
   }
+  
+  nameChangleHandler = (event) => {
+    this.setState({
+      persons:[
+        {name:'dsfd',age:19},
+        {name:event.target.value,age:221},
+        {name:'bks',age:232},
+        {name:'cks',age:242},
+      ]
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -34,7 +46,8 @@ class App extends Component {
          <h1>hello reactjs</h1>
          <button  onClick = {this.switchNameHandler.bind(this,'dude')}>CLICK me</button>
          <Person name={this.state.persons[0].name} age={this.state.persons[0].age}></Person>
-          <Person name={this.state.persons[1].name} age={this.state.persons[1].age}></Person>
+          <Person name={this.state.persons[1].name} change = {this.nameChangleHandler}
+           age={this.state.persons[1].age}></Person>
           <Person name={this.state.persons[2].name} click = {this.switchNameHandler.bind(this,'hkss')}
           age={this.state.persons[2].age}
           ></Person>
