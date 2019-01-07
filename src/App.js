@@ -10,6 +10,7 @@ class App extends Component {
     {name:'bk',age:23},
     {name:'ck',age:24},
   ],
+  showPerson:false
 
   }
 
@@ -39,12 +40,20 @@ class App extends Component {
     })
   }
 
+  toggleHandler = () => {
+  
+      const doesshow = this.state.showPerson;
+      this.setState({showPerson:!doesshow})
+     }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
          <h1>hello reactjs</h1>
-         <button  onClick = {this.switchNameHandler.bind(this,'dude')}>CLICK me</button>
+         <button  onClick = {this.toggleHandler}>CLICK me</button>
+         {this.state.showPerson? 
+         <div>
          <Person name={this.state.persons[0].name} age={this.state.persons[0].age}></Person>
           <Person name={this.state.persons[1].name} change = {this.nameChangleHandler}
            age={this.state.persons[1].age}></Person>
@@ -52,7 +61,10 @@ class App extends Component {
           age={this.state.persons[2].age}
           ></Person>
           <Person name={this.state.persons[3].name} age={this.state.persons[3].age}></Person>
+          </div>
+          : <div><h1>NO Person</h1></div>}
         </header>
+        
         
       </div>
       
